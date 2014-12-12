@@ -1,0 +1,52 @@
+
+
+<script src="js/tincan-min.js"></script>
+
+
+<script>
+
+
+var tincan = new TinCan (
+    {
+        recordStores: [
+            {
+                endpoint: "http://learninglocker.futureshub.net/data/xAPI",
+                username: "7bf602b82ab14512b03ef9f0c0c02a06617067d6",
+                password: "32adedbeb1de0970c51cfe876515abc455f809ae",
+                allowFail: false
+            }
+        ]
+    }
+);
+
+
+ 
+ var statement = {
+ 
+
+			actor: {
+				mbox: "mailto:javascript@futureshub.net"
+			},
+			verb: {
+				id: "http://adlnet.gov/expapi/verbs/attempted"
+			},
+			target: {
+				id: "http://futureshub.net/javascript"
+			}
+		}
+ 
+
+
+	tincan.sendStatement(statement, function(result){
+	
+		alert(JSON.stringify(result, null, 4));
+	
+	
+	}
+		
+);
+
+
+
+
+</script>
